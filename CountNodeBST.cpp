@@ -120,5 +120,5 @@ int main()
     std::cout<<"Number of Nodes in BST: "
                    <<tree->countNodes(head)<<"\n";
 				   
-	delete tree;
+    delete tree;
 }
