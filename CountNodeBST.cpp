@@ -88,10 +88,6 @@ int main()
  
     std::cout<<"InOrder: ";
     tree->InOrder(head);
-    std::cout<<"\nPreOrder: ";
-    tree->PreOrder(head);
-    std::cout<<"\nPostOrder: ";
-    tree->PostOrder(head);
     std::cout<<"\n";
     
     std::cout<<"Number of Nodes in BST: "
