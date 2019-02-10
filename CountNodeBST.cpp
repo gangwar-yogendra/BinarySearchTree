@@ -1,4 +1,4 @@
-/* Insert node in a Binary Search Tree */
+/* Count total number of nodes in Binary Search Tree */
 /**
   50
  / \
@@ -27,8 +27,6 @@ class BST
 public:
     void InsertBST(Node **head, int value);
     void InOrder(Node *head);
-    void PreOrder(Node *head);
-    void PostOrder(Node *head);
     
     /*Count the number of Nodes in BST */
     int countNodes(Node *head);
@@ -77,27 +75,6 @@ void BST::InOrder(Node *head)
     InOrder(head->right);
 }
 
-/* left -> root -> right */
-void BST::PreOrder(Node *head)
-{
-    if(head == NULL) return;
-    
-    PreOrder(head->left);
-    std::cout<<head->data<<" ";
-    PreOrder(head->right);
-}
-
-/* left -> right -> left*/
-void BST::PostOrder(Node *head)
-{
-    if(head == NULL) return;
-    
-    std::cout<<head->data<<" ";
-    PostOrder(head->right);
-    PostOrder(head->left);
-}
-
-
 int main()
 {
     Node *head = NULL;  
@@ -121,4 +98,6 @@ int main()
                    <<tree->countNodes(head)<<"\n";
 				   
     delete tree;
+	
+    return 0;
 }
