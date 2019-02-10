@@ -1,4 +1,4 @@
-/* Insert node in a Binary Search Tree */
+/* Check node value is present in binary search tree */
 /**
   50
  / \
@@ -28,8 +28,6 @@ public:
     /* Insert Node in BST */
     void InsertBST(Node **head, int value);
     void InOrder(Node *head);
-    void PreOrder(Node *head);
-    void PostOrder(Node *head);
 	
     /* Find Node in BST */	
     bool findNode(Node *head, int value);
@@ -123,4 +121,5 @@ int main()
     }
 	
     delete tree;
+    return 0;
 }
