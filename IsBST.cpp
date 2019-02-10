@@ -1,4 +1,4 @@
-/* Insert node in a Binary Search Tree */
+/* Check given tree is binary search tree */
 /**
   50
  / \
@@ -133,4 +133,6 @@ int main()
     }
 	
     delete tree;
+
+    return 0;
 }
