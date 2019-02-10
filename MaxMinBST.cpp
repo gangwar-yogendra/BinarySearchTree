@@ -1,4 +1,4 @@
-/* Insert node in a Binary Search Tree */
+/* Find min and max value in Binary Search Tree */
 /**
   50
  / \
@@ -28,8 +28,6 @@ public:
     /* Insert Node in BST */
     void InsertBST(Node **head, int value);
     void InOrder(Node *head);
-    void PreOrder(Node *head);
-    void PostOrder(Node *head);
 	
     /* Find Min */	
     int findMin(Node *head);
