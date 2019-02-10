@@ -66,8 +66,7 @@ int BST::findMax(Node *head)
             return (head->data);
         }
     }
- 
-	
+
     return -1;
 }
 
