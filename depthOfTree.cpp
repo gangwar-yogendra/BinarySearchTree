@@ -33,7 +33,7 @@ public:
     int depth(Node *tree);
 };
 
-/* Get max depth of a tree */
+/* Get max depth of a binary tree */
 int BST::depth(Node *tree)
 {
     if(tree == NULL) return 0;
