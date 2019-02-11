@@ -1,4 +1,4 @@
-/* Maximum depth of a tree */
+/* Delete all the nodes from a binary tree */
 /**
   50
  / \
@@ -30,15 +30,24 @@ public:
     void InOrder(Node *head);
 	
     /* depth of BST */	
-    int depth(Node *tree);
+    void deleteBST(Node **head);
 };
 
 /* Get max depth of a tree */
-int BST::depth(Node *tree)
+void BST::deleteBST(Node **head)
 {
-    if(tree == NULL) return 0;
+    if((*head) == NULL) {
+        return;
+    }
     
-    return (std::max(depth(tree->left), depth(tree->right)) + 1); 
+    deleteBST(&(*head)->left);
+    deleteBST(&(*head)->right);
+    
+    if((*head)->left == NULL && (*head)->right == NULL)
+    {
+        delete (*head);
+        (*head) = NULL;
+    }
 }
 
 /* Insert Node in BST */
@@ -48,7 +57,7 @@ void BST::InsertBST(Node **head, int value)
     {
         Node *newNode = new Node;
     
-        if(newNode != nullptr) {
+        if(newNode != NULL) {
             newNode->data = value;
             newNode->left = NULL;
             newNode->right = NULL;
@@ -87,11 +96,16 @@ int main()
     tree->InsertBST(&head, 60);
     tree->InsertBST(&head, 80);
  
-    std::cout<<"InOrder Tree 1: ";
+    std::cout<<"InOrder: ";
     tree->InOrder(head);
     std::cout<<"\n";
     
-    std::cout<<"Depth of tree: "<<tree->depth(head);
+    tree->deleteBST(&head);
+    
+    std::cout<<"\nPrint tree after delete all nodes.";
+    std::cout<<"\nInOrder: ";
+    tree->InOrder(head);
+    std::cout<<"\n";
 	
     delete tree;
     
